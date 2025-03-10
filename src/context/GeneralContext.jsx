@@ -12,6 +12,7 @@ const GeneralContextProvider = ({children}) => {
     const [technologyNews, setTechnologyNews] = useState([]);
     const [politicsNews, setPoliticsNews] = useState([]);
 
+    const newkey=" 5ee74a8247d34fe6a992405a5218f21c "
     useEffect(() => { 
         fetchTopNews() 
         fetchBusinessNews()
@@ -21,7 +22,7 @@ const GeneralContextProvider = ({children}) => {
     
       const fetchTopNews = async () => {
         try {
-          const response = await axios.get("https://newsapi.org/v2/everything?q=popular&apiKey=37306aca596542f0a8402978de3d4224");
+          const response = await axios.get('https://newsapi.org/v2/everything?q=popular&apiKey=5ee74a8247d34fe6a992405a5218f21c');
           setTopNews(response.data.articles);
         } catch (error) {
           console.error(error);
@@ -30,7 +31,7 @@ const GeneralContextProvider = ({children}) => {
 
       const fetchBusinessNews = async () => {
         try {
-          const response = await axios.get("https://newsapi.org/v2/everything?q=business&apiKey=37306aca596542f0a8402978de3d4224");
+          const response = await axios.get('https://newsapi.org/v2/everything?q=business&apiKey=5ee74a8247d34fe6a992405a5218f21c');
           setBusinessNews(response.data.articles);
         } catch (error) {
           console.error(error);
@@ -38,7 +39,7 @@ const GeneralContextProvider = ({children}) => {
       }
       const fetchPoliticsNews = async () => {
         try {
-          const response = await axios.get("https://newsapi.org/v2/everything?q=politics&apiKey=37306aca596542f0a8402978de3d4224");
+          const response = await axios.get('https://newsapi.org/v2/everything?q=politics&apiKey=5ee74a8247d34fe6a992405a5218f21c');
           setPoliticsNews(response.data.articles);
         } catch (error) {
           console.error(error);
@@ -46,7 +47,7 @@ const GeneralContextProvider = ({children}) => {
       }
       const fetchTechnologyNews = async () => {
         try {
-          const response = await axios.get("https://newsapi.org/v2/everything?q=technology&apiKey=37306aca596542f0a8402978de3d4224");
+          const response = await axios.get('https://newsapi.org/v2/everything?q=technology&apiKey=5ee74a8247d34fe6a992405a5218f21c');
           setTechnologyNews(response.data.articles);
         } catch (error) {
           console.error(error);
